@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const userNav = document.getElementById('user-nav');
         if (userNav) {
             if (currentUser) {
-                const userName = currentUser.displayName ? `, ${currentUser.displayName.split(' ')[0]}` : '';
-                userNav.innerHTML = `<a href="#" id="logout-btn">تسجيل الخروج</a>`;
+                const userName = currentUser.displayName ? `أهلاً، ${currentUser.displayName.split(' ')[0]}` : 'حسابي';
+                userNav.innerHTML = `<span style="margin-left: 1rem;">${userName}</span><a href="#" id="logout-btn">تسجيل الخروج</a>`;
                 document.getElementById('logout-btn').addEventListener('click', e => {
                     e.preventDefault();
                     auth.signOut();
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const product = products.find(p => p.id === productId);
         if (!product) return;
         const price = product.prices[weight];
-        const existingItemIndex = cart.findIndex(item => item.id === productId && item.weight == weight);
+        const existingItemIndex = cart.findIndex(item => item.id === productId && item.weight == weight && item.type === 'product');
 
         if (existingItemIndex > -1) {
             cart[existingItemIndex].quantity += quantity;
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.removeItemFromCart = async (index) => {
         cart.splice(index, 1);
         await saveData();
-        runPageSpecificFunctions(); // إعادة عرض السلة بعد الحذف
+        runPageSpecificFunctions();
     };
 
     window.addItemToFavorites = async (productId) => {
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.removeItemFromFavorites = async (productId) => {
         favorites = favorites.filter(fav => fav.id !== productId);
         await saveData();
-        runPageSpecificFunctions(); // إعادة عرض المفضلة
+        runPageSpecificFunctions();
     };
 
     // ======================================================
@@ -306,7 +306,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const summaryContainer = document.getElementById('order-summary');
         const nameInput = document.getElementById('name');
 
-        // الملء التلقائي للاسم إذا كان المستخدم مسجلاً
         if(nameInput && currentUser && currentUser.displayName){
             nameInput.value = currentUser.displayName;
         }

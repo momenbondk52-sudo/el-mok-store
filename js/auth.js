@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             userMessage = "كلمة المرور ضعيفة جدًا. يجب أن تكون 6 أحرف على الأقل.";
         } else if (error.code === 'auth/popup-closed-by-user') {
             userMessage = "تم إلغاء عملية تسجيل الدخول عبر جوجل.";
+        } else if (error.code === 'auth/unauthorized-domain') {
+            userMessage = "هذا النطاق غير مصرح له. يرجى التواصل مع الدعم الفني.";
         }
         alert(userMessage);
     };
