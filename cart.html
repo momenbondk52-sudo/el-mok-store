@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عربة التسوق - EL-MOK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="media/logo.png" type="image/png">
+</head>
+<body id="cart-page">
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="media/logo.png" alt="EL-MOK Logo">
+        </a>
+        <nav>
+            <a href="index.html#about">عن EL-MOK</a>
+            <a href="index.html#products">منتجاتنا</a>
+            <a href="subscriptions.html">الاشتراكات</a>
+        </nav>
+        <div class="header-actions">
+            <a href="cart.html">السلة (<span id="cart-count">0</span>)</a>
+            <a href="favorites.html">المفضلة</a>
+            <span id="user-nav"><a href="login.html">تسجيل الدخول</a></span>
+        </div>
+    </header>
+
+    <main>
+        <h1>عربة التسوق</h1>
+        <div id="cart-container">
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column center-align">
+                <img src="media/logo.png" alt="EL-MOK Logo" class="footer-logo">
+                <div class="footer-socials">
+                    <a href="https://wa.me/201069565078" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/el_mok2025?igsh=Z3VpYzNvZGM0MmIx" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1BGcq8oE6P/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html#about">عن EL-MOK</a></li>
+                    <li><a href="index.html#products">منتجاتنا</a></li>
+                    <li><a href="subscriptions.html">الاشتراكات</a></li>
+                    <li><a href="cart.html">عربة التسوق</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li>البريد الإلكتروني: elmok.coffee2025@gmail.com</li>
+                    <li>رقم الهاتف: 01069565078</li>
+                </ul>
+                <a href="https://chat.whatsapp.com/EzkTiwAraqF57ievUHndPG" target="_blank" class="cta-button secondary whatsapp-community-btn">انضم لمجتمعنا</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 EL-MOK Coffee. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
